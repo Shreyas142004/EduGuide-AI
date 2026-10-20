@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg-main: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --brand-primary: #4f46e5;
+    --brand-secondary: #6366f1;
+    --brand-violet: #6366f1;
+    --brand-deep: #4f46e5;
+    --brand-lavender: #818cf8;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --bg-main: #090d16;
+    --bg-secondary: #0f172a;
+    --bg-card: #111827;
+    --border-color: #1f2937;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --brand-primary: #6366f1;
+    --brand-secondary: #818cf8;
+    --brand-violet: #818cf8;
+    --brand-deep: #6366f1;
+    --brand-lavender: #a5b4fc;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Form controls: Ensure high-contrast readable text and backgrounds in both light & dark mode */
+  input, select, textarea {
+    background-color: #ffffff;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+
+  .dark input, .dark select, .dark textarea {
+    background-color: #111827 !important;
+    color: #f8fafc !important;
+    border-color: #1f2937 !important;
+  }
+
+  /* Explicit native option styling for all select dropdowns */
+  select option {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .dark select option {
+    background-color: #111827 !important;
+    color: #f8fafc !important;
+  }
+
+  /* Invert date picker calendar icon in dark mode so it is clearly visible */
+  .dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.85;
+    cursor: pointer;
+  }
+
+  /* Input placeholders */
+  input::placeholder, textarea::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1;
+  }
+  .dark input::placeholder, .dark textarea::placeholder {
+    color: #64748b !important;
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar styled for the Indigo & Slate Theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
